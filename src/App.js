@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import MarkerStore from './stores/MarkerStore';
+import UserStore from './stores/UserStore';
 import Category from './components/Category';
 import PeopleList from './components/PeopleList';
 import MyMap from './components/Map';
-import MarkerStore from './stores/MarkerStore';
 import MarkerInfo from './components/MarkerInfo';
-import Links from './components/Links';
+import LinksIfNotAuth from './components/LinksIfNotAuth';
+import LinksIfAuth from './components/LinksIfAuth';
 
 
 
@@ -84,7 +86,9 @@ class App extends Component {
             category: null,
             person: null,
             markerName: null,
-            markerInfo: null
+            markerInfo: null,
+            auth: UserStore.auth,
+            user: UserStore.user
         };
     }
     
@@ -101,14 +105,16 @@ class App extends Component {
             category: MarkerStore.category,
             person: MarkerStore.person,
             markerName: MarkerStore.markerName,
-            markerInfo: MarkerStore.markerInfo
+            markerInfo: MarkerStore.markerInfo,
+            auth: UserStore.auth,
+            user: UserStore.user            
         })       
     }
     
-    
-    
+       
     
   render() { 
+      console.log('App', this.state.auth) 
     return (
       <div className="App">
         <div className="App-header">
@@ -116,7 +122,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         
-        <Links />
+        {this.state.auth ? <LinksIfAuth /> : <LinksIfNotAuth />}
         
         <div id="map">            
             <MyMap items={markersInfo} person={this.state.person}/>          

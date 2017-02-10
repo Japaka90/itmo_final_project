@@ -2,11 +2,10 @@ import AppDispatcher from '../dispatcher/AppDispatcher';
 
 export default {
     
-    checkUser(login, password) {        
+    logOut() {  
+        console.log('logout action')
         AppDispatcher.dispatch({
-            actionType: 'AUTH',
-            login: login,
-            password: password
+            actionType: 'LOG_OUT'             
         })
     }
 }

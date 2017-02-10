@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 
-class Links extends Component { 
+class LinksIfNotAuth extends Component { 
     render() {
         return(
             <div className="links_wraper">
@@ -19,4 +19,4 @@ class Links extends Component {
     
 }
 
-export default Links;
+export default LinksIfNotAuth;

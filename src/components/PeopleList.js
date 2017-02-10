@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import MarkerStore from '../stores/MarkerStore';
 import PeopleListAction from '../actions/PeopleListAction';
 
 class PeopleList extends Component { 

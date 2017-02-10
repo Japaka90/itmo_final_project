@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import LogInAction from '../actions/LogInAction';
 
 class LoginPage extends Component { 
     
-//    getUserData = () => {
-//        console.log(13);
-//        return
-//    }
-    
     checkUser = () => {
-//        this.getUserData();
-        console.log(window.localStorage)
+        let login = document.getElementById("username_input").value;
+        let password = document.getElementById("password_input").value;
+        for (let key in window.localStorage) {
+            if (window.localStorage.key.login === window.localStorage.key.password) {                
+                LogInAction.logIn(login);
+                break;
+            }
+        }               
     }
     
     
@@ -28,7 +30,7 @@ class LoginPage extends Component {
                     <input type="password" name="password" id="password_input"/>
                   </div>  
                   <div>
-                    <input type="submit" value="Войти" onClick={this.checkUser}/>
+                    <input type="button" value="Войти" onClick={this.checkUser}/>
                   </div>
                 </form>
                 
