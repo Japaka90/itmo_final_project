@@ -1,0 +1,65 @@
+.App {
+  
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+#map {
+    width: 600px;
+    height: 500px;
+    float: left;   
+}
+
+.marker {
+    width: 10px;
+    height: 10px;
+    overflow: 'hidden';
+    border: 1px solid orange;
+    background: red;
+    border-radius: 50%;
+}
+
+.category_wrapper,
+.people_list_wrapper,
+.marker_info_wrapper {
+   text-align: center;
+    margin-top: 30px;
+}
+
+.category_wrapper li {
+    display: inline-block;
+    margin-right: 20px
+}
+
+.people_list_wrapper li {
+    margin-top: 20px;
+}
+
+.marker_info_wrapper {
+    width: 200px;
+    
+    position: absolute;
+    top: 200px;
+    left: 40px;
+    display: block;
+}
