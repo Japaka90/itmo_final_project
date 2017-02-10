@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PeopleStore from '../stores/PeopleStore';
+import MarkerStore from '../stores/MarkerStore';
 import PeopleListAction from '../actions/PeopleListAction';
 
 class PeopleList extends Component { 
@@ -34,8 +34,8 @@ class PeopleList extends Component {
     renderPeopleList = (item) => {          
         return (
             <ul key='peopleList'>
-            { this.getAllPeople(item).map((item) => this.renderPeopleItem(item)) }
-        </ul>
+                { this.getAllPeople(item).map((item) => this.renderPeopleItem(item)) }
+            </ul>
         )       
     }
 

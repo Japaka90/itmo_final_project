@@ -1,7 +1,7 @@
 import {EventEmitter} from 'events';
 import AppDispatcher from '../dispatcher/AppDispatcher';
 
-class PeopleStore extends EventEmitter {
+class MarkerStore extends EventEmitter {
     
     constructor(...arg) {
         super(...arg);
@@ -38,7 +38,7 @@ class PeopleStore extends EventEmitter {
     }
 }
 
-let store = new PeopleStore();
+let store = new MarkerStore();
 
 store.dispatchToken = AppDispatcher.register((action) => {       
     switch(action.actionType) {         

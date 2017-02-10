@@ -4,8 +4,10 @@ import './App.css';
 import Category from './components/Category';
 import PeopleList from './components/PeopleList';
 import MyMap from './components/Map';
-import PeopleStore from './stores/PeopleStore';
+import MarkerStore from './stores/MarkerStore';
 import MarkerInfo from './components/MarkerInfo';
+import Links from './components/Links';
+
 
 
 const markersInfo = [
@@ -87,19 +89,19 @@ class App extends Component {
     }
     
     componentDidMount() {
-        PeopleStore.addChangeListener(this.onChange);
+        MarkerStore.addChangeListener(this.onChange);
     }
     
      componentWillUnmount() {
-        PeopleStore.removeChangeListener(this.onChange);
+        MarkerStore.removeChangeListener(this.onChange);
     }
     
     onChange = () => {
         this.setState({
-            category: PeopleStore.category,
-            person: PeopleStore.person,
-            markerName: PeopleStore.markerName,
-            markerInfo: PeopleStore.markerInfo
+            category: MarkerStore.category,
+            person: MarkerStore.person,
+            markerName: MarkerStore.markerName,
+            markerInfo: MarkerStore.markerInfo
         })       
     }
     
@@ -113,6 +115,8 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
+        
+        <Links />
         
         <div id="map">            
             <MyMap items={markersInfo} person={this.state.person}/>          
