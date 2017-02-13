@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import LogOutAction from '../actions/LogOutAction';
+import LogOutAction from '../../actions/LogOutAction';
 
 
 class LinksIfAuth extends Component { 
     
     out = () => {
         LogOutAction.logOut()
+        console.log('LogOutAction')
     }
     
     render() {

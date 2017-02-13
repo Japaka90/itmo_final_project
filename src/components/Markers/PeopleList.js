@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PeopleListAction from '../actions/PeopleListAction';
+import PeopleListAction from '../../actions/PeopleListAction';
 
 class PeopleList extends Component { 
 
@@ -25,8 +25,7 @@ class PeopleList extends Component {
         );
     }
     
-    selectPerson = (event) => {
-        console.log(19, event.target.id);        
+    selectPerson = (event) => {        
         PeopleListAction.getMarkersByPerson(event.target.id)        
     } 
     

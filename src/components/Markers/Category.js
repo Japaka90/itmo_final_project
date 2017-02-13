@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CategoryAction from '../actions/CategoryAction';
+import CategoryAction from '../../actions/CategoryAction';
 
 class Category extends Component { 
     
@@ -25,8 +25,7 @@ class Category extends Component {
         return categoryId
     }
     
-    selectCategory = (event) => {
-        console.log(18, event.target.id);        
+    selectCategory = (event) => {       
         CategoryAction.getPeopleListByCategory(event.target.id) 
     } 
     

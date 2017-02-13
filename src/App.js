@@ -3,12 +3,12 @@ import logo from './logo.svg';
 import './App.css';
 import MarkerStore from './stores/MarkerStore';
 import UserStore from './stores/UserStore';
-import Category from './components/Category';
-import PeopleList from './components/PeopleList';
-import MyMap from './components/Map';
-import MarkerInfo from './components/MarkerInfo';
-import LinksIfNotAuth from './components/LinksIfNotAuth';
-import LinksIfAuth from './components/LinksIfAuth';
+import Category from './components/Markers/Category';
+import PeopleList from './components/Markers/PeopleList';
+import MyMap from './components/Markers/Map';
+import MarkerInfo from './components/Markers/MarkerInfo';
+import FavoriteList from './components/Markers/FavoriteList';
+import LinksForMainPage from './components/Registration/LinksForMainPage';
 
 
 
@@ -94,10 +94,12 @@ class App extends Component {
     
     componentDidMount() {
         MarkerStore.addChangeListener(this.onChange);
+        UserStore.addChangeListener(this.onChange);
     }
     
      componentWillUnmount() {
         MarkerStore.removeChangeListener(this.onChange);
+        UserStore.removeChangeListener(this.onChange);
     }
     
     onChange = () => {
@@ -113,8 +115,7 @@ class App extends Component {
     
        
     
-  render() { 
-      console.log('App', this.state.auth) 
+  render() {
     return (
       <div className="App">
         <div className="App-header">
@@ -122,10 +123,10 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         
-        {this.state.auth ? <LinksIfAuth /> : <LinksIfNotAuth />}
+        <LinksForMainPage auth={this.state.auth}/>         
         
         <div id="map">            
-            <MyMap items={markersInfo} person={this.state.person}/>          
+            <MyMap items={markersInfo} person={this.state.person}/>
         </div>
         
         <div className="category_wrapper">            
@@ -138,9 +139,13 @@ class App extends Component {
         
         <div className="marker_info_wrapper">            
             <MarkerInfo items={markersInfo} 
+                        person={this.state.person}
                         markerName={this.state.markerName}
-                        markerInfo={this.state.markerInfo}/>                      
+                        markerInfo={this.state.markerInfo}
+                        auth = {this.state.auth}/>                      
         </div>
+        
+        <FavoriteList auth = {this.state.auth}/>
         
       </div>
     );

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import LogInAction from '../../actions/LogInAction';
 
 class RegistrationPage extends Component { 
     
@@ -7,21 +8,29 @@ class RegistrationPage extends Component {
         let login = document.getElementById("username_input").value;
         let password = document.getElementById("password_input").value;
         let password2 = document.getElementById("password_input2").value;
-        console.log(login, password, password2);
+        let repeat = false;
+        
         if (password !== password2) {
             alert('Проверочные пароль не совпадает с основным. Пожалуйста введите пароль заново');
             document.getElementById("password_input").value = '';
             document.getElementById("password_input2").value = '';
-        }
-        for (let key in window.localStorage) {
-            if (key === login) {
-                alert('Пользователь с таким именем уже существует. Пожалуйста, выберите другое имя.')
+        } else {
+            for (let key in window.localStorage) {
+                if (key === login) {
+                    repeat = true;
+                    alert('Пользователь с таким именем уже существует. Пожалуйста, выберите другое имя.');
+                }
+            }
+            
+            if(!repeat) {
+                let newUser = {login: login, 
+                               password: password}; 
+                window.localStorage.setItem(login, JSON.stringify(newUser));
+                console.log(window.localStorage);
+                LogInAction.logIn(login);
+//                window.location.replace('/');
             }
         }
-        let newUser = {login: login, 
-                       password: password}; 
-        window.localStorage.setItem(login, JSON.stringify(newUser));
-        console.log(window.localStorage)        
     }
     
     

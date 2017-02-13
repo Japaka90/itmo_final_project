@@ -29,8 +29,7 @@ class UserStore extends EventEmitter {
 
 let store = new UserStore();
 
-store.dispatchToken = AppDispatcher.register((action) => {  
-    console.log('UserStore works')
+store.dispatchToken = AppDispatcher.register((action) => {
     switch(action.actionType) {         
         case 'USER_CHECKED':            
             store.login(action.user);
@@ -38,7 +37,6 @@ store.dispatchToken = AppDispatcher.register((action) => {
             break;   
         case 'LOG_OUT':             
             store.logout();
-            console.log(store.auth);
             store.emit('U_CHANGED');
             break;
         default:

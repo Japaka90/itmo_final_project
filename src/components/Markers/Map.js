@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import { Map, Marker, MarkerLayout } from 'yandex-map-react';
-import MarkersAction from '../actions/MarkersAction';
+import MarkersAction from '../../actions/MarkersAction';
 
 
 const mapState = {

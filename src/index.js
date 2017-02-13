@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 import { Router, Route, hashHistory } from 'react-router';
-import LoginPage from './components/LoginPage';
-import RegistrationPage from './components/RegistrationPage';
+import LoginPage from './components/Registration/LoginPage';
+import RegistrationPage from './components/Registration/RegistrationPage';
 
 
 ReactDOM.render(

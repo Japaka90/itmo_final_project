@@ -1,20 +1,49 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import LogInAction from '../actions/LogInAction';
+import LogInAction from '../../actions/LogInAction';
+import UserStore from '../../stores/UserStore';
 
-class LoginPage extends Component { 
+class LoginPage extends Component {
+    
+    componentWillMount() {
+        this.state = {
+         auth: UserStore.auth,
+        };
+    }
+
+    componentDidMount() {
+        UserStore.addChangeListener(this.onChange);
+    };
+
+     componentWillUnmount() {
+        UserStore.removeChangeListener(this.onChange);
+    };    
+    
+    onChange = () => {
+        this.setState({            
+            auth: UserStore.auth,                  
+        })   
+    }
+    
     
     checkUser = () => {
         let login = document.getElementById("username_input").value;
-        let password = document.getElementById("password_input").value;
-        for (let key in window.localStorage) {
-            if (window.localStorage.key.login === window.localStorage.key.password) {                
-                LogInAction.logIn(login);
-                break;
+        let password = document.getElementById("password_input").value; 
+        
+        for (let key in window.localStorage) {                     
+            if (key === login) {               
+                let user = JSON.parse(localStorage.getItem(key));  
+                if (user.password === password) {                
+                    LogInAction.logIn(login);      
+                } else {alert('Неверный пароль')}    
             }
-        }               
+        }              
     }
     
+    checkAuth = () => {
+        
+    }
+
     
     render() {
         return(
@@ -25,12 +54,16 @@ class LoginPage extends Component {
                      <label htmlFor="username_input">Введите логин</label>
                      <input type="text" name="username" id="username_input"/>
                   </div>
+            
                   <div>  
                     <label htmlFor="password_input">Введите пароль</label>
                     <input type="password" name="password" id="password_input"/>
-                  </div>  
+                  </div> 
+            
                   <div>
-                    <input type="button" value="Войти" onClick={this.checkUser}/>
+                    <Link to={this.state.auth ? '/' : ''}>
+                        <input type="button" value="Войти" onClick={this.checkUser}/>
+                    </Link>
                   </div>
                 </form>
                 
