@@ -6,11 +6,13 @@ class Category extends Component {
     getAllCategories = () => {
         let data = this.props.items;
         let categories = [];
-        for (var i in data) {            
-            let lastItem = categories[categories.length-1]; 
-            if (lastItem !== data[i]['category']) {
-                categories.push(data[i]['category'])
-            }           
+        for (var i in data) { 
+            if(data.hasOwnProperty(i)) {
+                let lastItem = categories[categories.length-1]; 
+                if (lastItem !== data[i]['category']) {
+                    categories.push(data[i]['category'])
+                }
+            }
         }             
         return categories
     }

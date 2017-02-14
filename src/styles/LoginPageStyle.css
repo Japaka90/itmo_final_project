@@ -1,0 +1,111 @@
+.login_page,
+.registration_page{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    background: #323B55;
+}
+
+.login_box_wrapper,
+.registration_box_wrapper,
+.login_additional_items,
+.registration_additional_items{
+    position: absolute;    
+    top: 15%;
+}
+
+.login_box_wrapper,
+.registration_box_wrapper {
+    width: 25%; 
+    left: 15%;
+/*    background: LightYellow;*/
+    border-radius: 5%;
+    padding: 2vw;
+    text-align: center;
+}
+
+.login_box_wrapper h2,
+.registration_box_wrapper h2 {
+    color: #fff;
+    font-size: 2.5vw;
+}
+
+.login_additional_items,
+.registration_additional_items{    
+    left: 55%;
+}
+
+#username_input,
+#password_input,
+#password_input2,
+#submit_btn,
+#registration_btn,
+#home_link_btn,
+#login_btn {
+    width: 90%;
+    height: 3vw;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#submit_btn,
+#registration_btn,
+#home_link_btn,
+#login_btn {
+    background: #5466da;
+    height: 4vw;
+    color: #fff;
+    font-size: 1.4vw;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+#submit_btn:hover,
+#registration_btn:hover,
+#home_link_btn:hover,
+#login_btn:hover {
+    background: #d9ccc3;
+    color: #292d39;
+}
+
+#home_link_btn {
+    margin-top: 3vw;
+}
+
+.login_additional_items{
+    margin-top: 9.2vw;
+    text-align: center;
+}
+
+.no_account_img {
+    width: 20vw;
+    position: relative;
+}
+
+.login_additional_items p {
+    position: absolute;
+    color: burlywood;
+    font-size: 1.5vw;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    bottom: 7.1vw;
+}
+
+#registration_btn {
+    width: 20vw;
+    margin-top: 2vw;
+}
+
+.registration_additional_items {
+    margin-top: 5vw;
+    text-align: center;
+}
+
+.have_account_wrapper p {
+    color: #fff;
+    font-size: 2vw;
+}
+

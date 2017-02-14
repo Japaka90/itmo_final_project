@@ -9,7 +9,10 @@ import MyMap from './components/Markers/Map';
 import MarkerInfo from './components/Markers/MarkerInfo';
 import FavoriteList from './components/Markers/FavoriteList';
 import LinksForMainPage from './components/Registration/LinksForMainPage';
+import LinksMainPage from './styles/LinksMainPage.css';
 import markersInfo from './DataApp';
+
+
 
 
 
@@ -62,7 +65,7 @@ class App extends Component {
 
 
             <div className="category_wrapper">            
-                <Category items={markersInfo}/>                      
+                <Category items={markersInfo}/>          
             </div>
 
             <div className="people_list_wrapper">            

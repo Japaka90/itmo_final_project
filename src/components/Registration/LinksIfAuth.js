@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import LogOutAction from '../../actions/LogOutAction';
-import LinksMainPage from '../../styles/LinksMainPage.css';
 
 class LinksIfAuth extends Component { 
     
@@ -13,7 +12,7 @@ class LinksIfAuth extends Component {
         return(
             <div className="links_wraper">
                 <div className="logout_link">
-                    <input type="submit" onClick={this.out} value="Выйти" />
+                    <input className="logout_button" type="submit" onClick={this.out} value="Выйти" />
                 </div>
            </div>
         )

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import LinksIfNotAuth from './LinksIfNotAuth';
 import LinksIfAuth from './LinksIfAuth';
-import LinksMainPage from '../../styles/LinksMainPage.css';
-
 
 
 export default class LinksForMainPage extends Component {

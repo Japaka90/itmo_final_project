@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import LogInAction from '../../actions/LogInAction';
 import UserStore from '../../stores/UserStore';
+import '../../styles/LoginPageStyle.css';
 
 class LoginPage extends Component {
     
@@ -47,36 +48,38 @@ class LoginPage extends Component {
     
     render() {
         return(
-            <div>
-                <h2>Войти в личный кабинет</h2>
-                <form>
-                  <div>
-                     <label htmlFor="username_input">Введите логин</label>
-                     <input type="text" name="username" id="username_input"/>
-                  </div>
+            <div className="login_page">
+                <div className="login_box_wrapper">
+                    <h2>Войти в личный кабинет</h2>
+                    <form className="login">                      
+                        <input type="text" id="username_input" placeholder="Введите логин"/>
             
-                  <div>  
-                    <label htmlFor="password_input">Введите пароль</label>
-                    <input type="password" name="password" id="password_input"/>
-                  </div> 
+                        <input type="password" id="password_input" placeholder="Введите пароль"/>
             
-                  <div>
-                    <Link to={this.state.auth ? '/' : ''}>
-                        <input type="button" value="Войти" onClick={this.checkUser}/>
-                    </Link>
-                  </div>
-                </form>
-                
-                <div className="no_account_wrapper">
-                    <p>У меня нет личного кабинета :(</p>
-                    <div className="registration_link">
-                        <Link to="/register">Зарегистрироваться</Link>
-                    </div>
+                        <Link to={this.state.auth ? '/' : ''}>
+                            <input type="button" id="submit_btn" value="Войти" onClick={this.checkUser}/>
+                        </Link>
+            
+                       <div className="home_link">
+                            <Link to="/">
+                                <input type="button" id="home_link_btn" value="Вернуться назад" />
+                            </Link>
+                        </div>
+                    </form>
                 </div>
+                <div className="login_additional_items">
+                     
+                    <div className="no_account_wrapper">
+                        <p>У меня нет личного кабинета :(</p>
+                        <img className="no_account_img" src="http://file.mobilmusic.ru/f7/ea/43/1131059.jpg"/>
             
-            
-                <div className="home_link">
-                    <Link to="/">Вернуться назад</Link>
+                        <div className="registration_link">
+                            <Link to="/register"><input type="button" id="registration_btn" value="Зарегистрироваться"/></Link>
+                        </div>
+                    </div>
+
+
+                    
                 </div>
             </div>
         )

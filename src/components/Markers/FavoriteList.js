@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import FavoriteListAction from '../../actions/PeopleListAction';
-import PeopleListAction from '../../actions/PeopleListAction';
+//import FavoriteListAction from '../../actions/PeopleListAction';
+//import PeopleListAction from '../../actions/PeopleListAction';
 import MarkersAction from '../../actions/MarkersAction';
 
 class FavoriteList extends Component {
@@ -47,8 +47,8 @@ class FavoriteList extends Component {
     checkAuth = () => {
         if (this.props.auth) {            
             return(
-                <div>
-                <h3>Мои любимые места</h3>
+                <div className="favorite_list">
+                <h3 className="favorite_list_header">Мои любимые места</h3>
                  {this.renderFavoriteList(this.props.user)}
                 </div>
             )

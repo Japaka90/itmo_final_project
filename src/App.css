@@ -6,22 +6,11 @@
 #map {    
     position: absolute;
     width: 100%;
-    height: 650px;
-/*    float: left;*/
+    height: 690px;
     z-index: 1;
 }
 
-.app_info_wrapper {
-    position: absolute;
-    top: 50px;
-    right: 20px;
-    padding-top: 20px;
-    width: 25%;
-    z-index: 2;
-    border: 1px solid grey;
-    border-radius: 1%;
-    background: white;
-}
+
 
 
 .marker {

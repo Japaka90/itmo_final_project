@@ -1,19 +1,63 @@
+.app_info_wrapper {
+    position: absolute;
+    top: 8vh;
+    right: 2vw;
+    max-height: 450px;
+    overflow: hidden;    
+    width: 25%;
+    z-index: 2;
+    border: 1px solid grey;
+    border-radius: 1%;
+    background: white;
+}
+
+
 .category_wrapper,
 .people_list_wrapper,
 .marker_info_wrapper {
-    margin-top: 30px;
+    margin-top: 5vh;
 }
+
 
 .category_wrapper li {
     display: inline-block;
-    margin-right: 20px
+    width: 10vw;        
+    margin-right: 1vw; 
+    margin-bottom: 2vh; 
+    vertical-align: middle;
+}
+
+.category_wrapper li:hover {
+    color: lightblue;
+}
+
+.category_wrapper ul {
+    text-align: center;
+    padding-left: 2vw;
 }
 
 .people_list_wrapper {
-    height: 150px;
-/*    list-style-type: none;*/
+    height: 60%;
+    margin-bottom: 2vh;
 }
 
 .people_list_wrapper li {
-    margin-top: 20px;
+    margin-top: 2vh;
 }
+
+.people_list_wrapper li:hover {
+    color: CadetBlue;
+}
+
+
+.favorite_list {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    background: Moccasin;
+    overflow: auto;
+}
+
+.favorite_list_header {
+    text-align: center;
+}
+
