@@ -1,0 +1,10 @@
+.links_main_page {
+    text-align: right;
+    display: 
+}
+
+.login_link,
+.register_link {
+    display: inline;
+    margin: 0 10px;
+}

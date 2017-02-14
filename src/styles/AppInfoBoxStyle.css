@@ -1,0 +1,19 @@
+.category_wrapper,
+.people_list_wrapper,
+.marker_info_wrapper {
+    margin-top: 30px;
+}
+
+.category_wrapper li {
+    display: inline-block;
+    margin-right: 20px
+}
+
+.people_list_wrapper {
+    height: 150px;
+/*    list-style-type: none;*/
+}
+
+.people_list_wrapper li {
+    margin-top: 20px;
+}

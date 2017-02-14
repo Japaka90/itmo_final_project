@@ -1,0 +1,50 @@
+#closingTag,
+#affFavoriteTag {
+    display: inline-block;
+    margin: 5px;
+    float: right;
+}
+
+.marker_info_wrapper {
+    width: 30%;
+    max-height: 250px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 2; 
+    position: absolute;
+    top: 300px;
+    left: 40px;
+    display: block;
+    padding-bottom: 10px;
+}
+
+.marker_info_header {
+    padding-left: 20px;
+}
+
+.marker_info_text {
+    max-height: 200px;
+    overflow: auto;
+    padding: 0px 10px 0px 15px;
+    font-size: 15px;
+}
+
+.place_info {
+    
+}
+
+#affFavoriteTag {
+    color: darkorange;
+}
+
+#affFavoriteTag:hover {
+    color: yellow;
+}
+
+#closingTag {
+     color: red;
+}
+
+#closingTag:hover {
+    color: darkorange;
+}

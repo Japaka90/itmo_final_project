@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-
+import LinksMainPage from '../../styles/LinksMainPage.css';
 
 class LinksIfNotAuth extends Component { 
     render() {

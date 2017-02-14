@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import LinksIfNotAuth from './LinksIfNotAuth';
 import LinksIfAuth from './LinksIfAuth';
+import LinksMainPage from '../../styles/LinksMainPage.css';
+
 
 
 export default class LinksForMainPage extends Component {
     render() {
         return(
-            <div>
+            <div className="links_main_page">
             {this.props.auth ? <LinksIfAuth /> : <LinksIfNotAuth />}
             </div>
         )

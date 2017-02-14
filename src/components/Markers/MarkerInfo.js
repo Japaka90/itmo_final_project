@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PeopleListAction from '../../actions/PeopleListAction';
 import FavoriteListAction from '../../actions/FavoriteListAction';
 import '../../styles/font-awesome-4.7.0/css/font-awesome.min.css';
+import '../../styles/MarkerInfoBoxStyle.css';
 
 class MarkerInfo extends Component {     
     
@@ -14,8 +15,8 @@ class MarkerInfo extends Component {
     
     infoBoxStyle = () => {
         if(this.props.markerName) {
-            return ({border: "1px solid black",
-                    background: "lightblue"})
+            return ({border: "1px solid grey",
+                    background: "white"})
         }        
     }
     
@@ -37,7 +38,7 @@ class MarkerInfo extends Component {
     
     addToFavorite = () => {
         if (this.props.auth) {
-            FavoriteListAction.addFavorite(this.props.markerName)
+            FavoriteListAction.addFavorite(this.props.user, this.props.markerName, this.props.person)
         } else {
             alert('Войдите, пожалуйста, в свой личный кабинет, если хотите добавить это место в избранное.')
         }
@@ -49,14 +50,15 @@ class MarkerInfo extends Component {
         let mark = this.getMarkerInfo();
         
         return(            
-            <div className="place_info" style={this.infoBoxStyle()}>
+            <div className="place_info" style={this.infoBoxStyle()}>            
+            
                 <div id="closingTag" onClick={this.closeMarkerInfo}>{this.closingMarkerInfoButton()}              
                 </div>
                     
                 <div id="affFavoriteTag" onClick={this.addToFavorite}>{this.addToFavoriteButton()}</div>
                 
-                <h3>{mark.name}</h3>
-                <p>{mark.info}</p>            
+                <h3 className="marker_info_header">{mark.name}</h3>
+                <p className="marker_info_text">{mark.info}</p>            
             </div>
         )
     }

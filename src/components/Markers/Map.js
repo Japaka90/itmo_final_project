@@ -39,8 +39,7 @@ class MyMap extends Component {
     }
     
     
-  selectMarker = (e) => {
-    // получить координаты метки по клику на неё
+  selectMarker = (e) => {    
       let coordinates = e.get('target').geometry.getCoordinates();
       let lat = coordinates[0];
       let lng = coordinates[1];
@@ -49,13 +48,17 @@ class MyMap extends Component {
 
         MarkersAction.getMarkerInfo(lat, lng, moreInfo.markerName, moreInfo.text);        
     } 
+  
+  colorSelectedMarker = () => {
+      return {'background': 'blue'}
+  }
       
        
     render() {        
         return (
             <Map 
             onAPIAvailable={function () { console.log('API loaded'); }}
-            width={'100%'} height={'100%'} state={mapState} center={[50, 50]} zoom={2}>
+            width={'100%'} height={'100%'} state={mapState} center={[50, 45]} zoom={2}>
             {this.getMarkers(this.props.person).map(([lat, lng], i) =>  (
                 <Marker key={'marker_' + i}  lat={lat} lon={lng} 
                 onClick={this.selectMarker}>

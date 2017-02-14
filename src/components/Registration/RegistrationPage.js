@@ -11,7 +11,7 @@ class RegistrationPage extends Component {
         let repeat = false;
         
         if (password !== password2) {
-            alert('Проверочные пароль не совпадает с основным. Пожалуйста введите пароль заново');
+            alert('Проверочный пароль не совпадает с основным. Пожалуйста введите пароль заново');
             document.getElementById("password_input").value = '';
             document.getElementById("password_input2").value = '';
         } else {
@@ -24,11 +24,11 @@ class RegistrationPage extends Component {
             
             if(!repeat) {
                 let newUser = {login: login, 
-                               password: password}; 
+                               password: password,
+                               places: []}; 
                 window.localStorage.setItem(login, JSON.stringify(newUser));
                 console.log(window.localStorage);
                 LogInAction.logIn(login);
-//                window.location.replace('/');
             }
         }
     }
