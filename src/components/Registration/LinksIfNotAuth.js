@@ -7,11 +7,15 @@ class LinksIfNotAuth extends Component {
         return(
             <div className="links_wraper">
                 <div className="login_link">
-                    <Link to="/login">Войти</Link>
+                    <Link to="/login">
+                        <input type="button" className="main_page_links" value="Вход" />
+                    </Link>
                 </div>
 
                 <div className="register_link">
-                    <Link to="/register">Зарегистрироваться</Link>
+                    <Link to="/register">
+                        <input type="button" className="main_page_links" value="Регистрация" />
+                    </Link>
                 </div>
            </div>
         )

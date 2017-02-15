@@ -1,12 +1,12 @@
-import AppDispatcher from '../dispatcher/AppDispatcher';
+//import AppDispatcher from '../dispatcher/AppDispatcher';
 
 export default {
     
     addFavorite(user, markerName, person) {       
-        console.log(88, 'ADD_TO_FAVORITE')
-        AppDispatcher.dispatch({
-            actionType: 'ADD_TO_FAVORITE',                   
-        });
+//        console.log(88, 'ADD_TO_FAVORITE')
+//        AppDispatcher.dispatch({
+//            actionType: 'ADD_TO_FAVORITE',                   
+//        });
         
         for (let key in window.localStorage) {           
             if (key === user){
