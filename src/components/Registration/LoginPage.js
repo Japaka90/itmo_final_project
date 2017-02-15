@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import LogInAction from '../../actions/LogInAction';
 import UserStore from '../../stores/UserStore';
 import '../../styles/LoginPageStyle.css';
+import sadCat from "../../img/sad_cat.jpg";
 
 class LoginPage extends Component {
     
@@ -71,7 +72,7 @@ class LoginPage extends Component {
                      
                     <div className="no_account_wrapper">
                         <p>У меня нет личного кабинета :(</p>
-                        <img className="no_account_img" src="http://file.mobilmusic.ru/f7/ea/43/1131059.jpg" alt="sad cat"/>
+                        <img className="no_account_img" src={sadCat} alt="sad cat"/>
             
                         <div className="registration_link">
                             <Link to="/register"><input type="button" id="registration_btn" value="Зарегистрироваться"/></Link>

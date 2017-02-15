@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PeopleListAction from '../../actions/PeopleListAction';
+import Przhevalsky from './Przhevalsky';
 
 class PeopleList extends Component { 
 
@@ -29,10 +30,12 @@ class PeopleList extends Component {
         PeopleListAction.getMarkersByPerson(event.target.id)        
     } 
     
+    
     renderPeopleList = (item) => {          
         return (
             <ul key='peopleList'>
                 { this.getAllPeople(item).map((item) => this.renderPeopleItem(item)) }
+                <Przhevalsky category={this.props.category}/>
             </ul>
         )       
     }

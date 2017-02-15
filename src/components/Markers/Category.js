@@ -41,12 +41,9 @@ class Category extends Component {
     }
     
     render() {   
-        
-      
-        
-         return(
+        return(
             <ul>
-                {this.getAllCategories().map((item) => this.renderItem(item))}
+                {this.getAllCategories().map((item) => this.renderItem(item))} 
             </ul>
         )
     }

@@ -8,11 +8,10 @@ import PeopleList from './components/Markers/PeopleList';
 import MyMap from './components/Markers/Map';
 import MarkerInfo from './components/Markers/MarkerInfo';
 import FavoriteList from './components/Markers/FavoriteList';
-import LinksForMainPage from './components/Registration/LinksForMainPage';
 import './styles/LinksMainPage.css';
 import markersInfo from './DataApp';
 import Header from './components/App/Header';
-
+import "./audio/przhevalskiy.mp3";
 
 
 
@@ -57,6 +56,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">  
+        <div>
+        <audio autoplay src="./audio/przhevalskiy.mp3">  </audio>
+        </div>
         
         <Header auth={this.state.auth}/>
         
@@ -88,8 +90,7 @@ class App extends Component {
                         auth={this.state.auth}
                         user={this.state.user}/>                      
             </div>
-        </div>      
-        
+        </div>     
       </div>
     );
   }
