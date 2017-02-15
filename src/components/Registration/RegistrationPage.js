@@ -46,7 +46,7 @@ class RegistrationPage extends Component {
                         <input type="password" id="password_input" placeholder="Введите пароль"/>
 
                         <input type="password" id="password_input2" placeholder="Повторите пароль"/>
-
+                        
                         <input type="button" id="submit_btn" value="Зарегистрироваться" onClick={this.registration}/>                      
                     </form>
                 </div>

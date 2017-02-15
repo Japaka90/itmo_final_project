@@ -61,7 +61,6 @@ class MyMap extends Component {
 
         MarkersAction.getMarkerInfo(lat, lng, moreInfo.markerName, moreInfo.text);        
     } 
-  
  
   
     renderFavoriteMarker = (lat, lng) => {

@@ -5,7 +5,6 @@ import Przhevalsky from './Przhevalsky';
 class PeopleList extends Component { 
 
     
-// создать список людей без повторов по конкретной категории
     getAllPeople = (item) => {         
         let data = this.props.items;       
         let people =[];

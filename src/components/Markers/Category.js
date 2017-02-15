@@ -31,7 +31,7 @@ class Category extends Component {
         CategoryAction.getPeopleListByCategory(event.target.id) 
     } 
     
-    // выбор конкретной категории меняет state
+    
      renderItem = (item) => { 
         let index = this.getCategoryId(item);        
         return (

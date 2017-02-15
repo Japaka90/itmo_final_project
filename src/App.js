@@ -11,8 +11,6 @@ import FavoriteList from './components/Markers/FavoriteList';
 import './styles/LinksMainPage.css';
 import markersInfo from './DataApp';
 import Header from './components/App/Header';
-import "./audio/przhevalskiy.mp3";
-
 
 
 class App extends Component {
@@ -56,9 +54,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">  
-        <div>
-        <audio autoplay src="./audio/przhevalskiy.mp3">  </audio>
-        </div>
         
         <Header auth={this.state.auth}/>
         

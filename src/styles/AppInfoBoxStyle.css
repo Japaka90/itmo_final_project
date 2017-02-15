@@ -1,8 +1,8 @@
 .app_info_wrapper {
     position: absolute;
-    top: 7vh;
+    top: 6vh;
     right: 2vw;
-    max-height: 650px;
+    max-height: 660px;
     overflow: hidden;    
     width: 25%;
     z-index: 2;
@@ -13,7 +13,7 @@
 
 .category_wrapper{
     margin-top: 2.5vw;   
-    margin-bottom: 1.2vw; 
+    margin-bottom: 1.1vw; 
 }
 
 
@@ -38,8 +38,9 @@
 
 .people_list_wrapper {
     height: 60%;
-    margin-bottom: 2vh;
     font-size: 1.1vw;
+    overflow: auto;
+    max-height: 120px;
 }
 
 .people_list_wrapper li {
@@ -59,8 +60,7 @@
     background: Moccasin;
     color: MidnightBlue;
     overflow: auto;
-    max-height: 220px;
-    
+    max-height: 200px;    
 }
 
 .favorite_list_header {
