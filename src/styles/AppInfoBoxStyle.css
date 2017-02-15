@@ -1,8 +1,8 @@
 .app_info_wrapper {
     position: absolute;
-    top: 8vh;
+    top: 9vh;
     right: 2vw;
-    max-height: 450px;
+    max-height: 650px;
     overflow: hidden;    
     width: 25%;
     z-index: 2;
@@ -11,11 +11,9 @@
     background: white;
 }
 
-
-.category_wrapper,
-.people_list_wrapper,
-.marker_info_wrapper {
-    margin-top: 5vh;
+.category_wrapper{
+    margin-top: 2.5vw;   
+    margin-bottom: 1.2vw; 
 }
 
 
@@ -23,12 +21,14 @@
     display: inline-block;
     width: 10vw;        
     margin-right: 1vw; 
-    margin-bottom: 2vh; 
+    margin-bottom: 1vw; 
     vertical-align: middle;
+    color: DarkSlateBlue;
+    font-size: 1.2vw;
 }
 
 .category_wrapper li:hover {
-    color: lightblue;
+    color: CornflowerBlue;
 }
 
 .category_wrapper ul {
@@ -39,14 +39,17 @@
 .people_list_wrapper {
     height: 60%;
     margin-bottom: 2vh;
+    font-size: 1.1vw;
 }
 
 .people_list_wrapper li {
     margin-top: 2vh;
+    color: MidnightBlue;
 }
 
-.people_list_wrapper li:hover {
-    color: CadetBlue;
+.people_list_wrapper li:hover,
+.favorite_list li:hover{
+    color: SteelBlue;
 }
 
 
@@ -54,10 +57,14 @@
     padding-top: 1vh;
     padding-bottom: 1vh;
     background: Moccasin;
+    color: MidnightBlue;
     overflow: auto;
+    max-height: 220px;
+    
 }
 
 .favorite_list_header {
     text-align: center;
+    color: black;
 }
 

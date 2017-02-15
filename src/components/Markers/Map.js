@@ -5,7 +5,7 @@ import MarkersAction from '../../actions/MarkersAction';
 
 
 const mapState = {
-    controls: ['default']
+    controls: []
 };
 
 

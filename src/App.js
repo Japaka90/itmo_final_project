@@ -11,7 +11,7 @@ import FavoriteList from './components/Markers/FavoriteList';
 import LinksForMainPage from './components/Registration/LinksForMainPage';
 import './styles/LinksMainPage.css';
 import markersInfo from './DataApp';
-
+import Header from './components/App/Header';
 
 
 
@@ -57,7 +57,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">  
-            
+        
+        <Header auth={this.state.auth}/>
+        
         <div id="map">            
             <MyMap items={markersInfo} 
                     person={this.state.person}
@@ -65,8 +67,6 @@ class App extends Component {
         </div>
 
         <div className="app_info_wrapper"> 
-            <LinksForMainPage auth={this.state.auth}/>        
-
 
             <div className="category_wrapper">            
                 <Category items={markersInfo}/>          
@@ -79,16 +79,16 @@ class App extends Component {
             <FavoriteList auth={this.state.auth}
                           user={this.state.user}
                           items={markersInfo} />
-        </div>
         
-        <div className="marker_info_wrapper">            
-                <MarkerInfo items={markersInfo} 
-                            person={this.state.person}
-                            markerName={this.state.markerName}
-                            markerInfo={this.state.markerInfo}
-                            auth={this.state.auth}
-                            user={this.state.user}/>                      
+            <div className="marker_info_wrapper">            
+            <MarkerInfo items={markersInfo} 
+                        person={this.state.person}
+                        markerName={this.state.markerName}
+                        markerInfo={this.state.markerInfo}
+                        auth={this.state.auth}
+                        user={this.state.user}/>                      
             </div>
+        </div>      
         
       </div>
     );

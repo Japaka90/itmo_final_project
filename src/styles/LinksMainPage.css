@@ -1,10 +1,12 @@
 .links_main_page {
-    text-align: right;    
+    text-align: right;  
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .links_wraper{
     position: relative;
-    top: 1vw;
     margin-bottom: 1vw;
 }
 
@@ -29,6 +31,6 @@
 .main_page_links,
 .logout_button {
     border-radius: 3px;
-    height: 4vh;
+    height: 3.1vh;
     padding: 0 1vw;
 }
