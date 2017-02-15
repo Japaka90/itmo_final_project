@@ -35,7 +35,8 @@ class MarkerStore extends EventEmitter {
     setMarker(markerName, markerInfo) {
         this.markerName = markerName;
         this.markerInfo = markerInfo;
-    }
+    }    
+    
 }
 
 let store = new MarkerStore();

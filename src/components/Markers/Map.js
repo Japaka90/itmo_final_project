@@ -38,6 +38,19 @@ class MyMap extends Component {
         return info
     }
     
+    //получить координаты по названию места
+    getCoordinates = (markerName) => {
+        let data = this.props.items;
+        let coordinates = {};
+        for (var i in data) {
+            if (data[i]['markerName'] === markerName){
+                coordinates.lat = data[i]['lat'];
+                coordinates.lng = data[i]['lng'];                
+            }
+        }
+        return coordinates
+    }
+    
     
   selectMarker = (e) => {    
       let coordinates = e.get('target').geometry.getCoordinates();
@@ -49,9 +62,23 @@ class MyMap extends Component {
         MarkersAction.getMarkerInfo(lat, lng, moreInfo.markerName, moreInfo.text);        
     } 
   
-  colorSelectedMarker = () => {
-      return {'background': 'blue'}
-  }
+ 
+  
+    renderFavoriteMarker = (lat, lng) => {
+        if(this.props.markerName) {
+            return (
+                <Marker key={'favorite_place' }  
+                lat={this.getCoordinates(this.props.markerName).lat} 
+                lon={this.getCoordinates(this.props.markerName).lng} 
+                onClick={this.selectFavoriteMarker}>
+                    <MarkerLayout >
+                        <div className="marker_selected" >                       
+                        </div>
+                    </MarkerLayout>
+                </Marker>
+            )
+        }
+    }
       
        
     render() {        
@@ -62,12 +89,13 @@ class MyMap extends Component {
             {this.getMarkers(this.props.person).map(([lat, lng], i) =>  (
                 <Marker key={'marker_' + i}  lat={lat} lon={lng} 
                 onClick={this.selectMarker}>
-                    <MarkerLayout>
-                        <div className="marker" >                        
+                    <MarkerLayout >
+                        <div className="marker">                        
                         </div>
                     </MarkerLayout>
-                </Marker>
+                </Marker>                        
             ))}
+            {this.renderFavoriteMarker(50,60)}
             </Map>    
         )
     }    

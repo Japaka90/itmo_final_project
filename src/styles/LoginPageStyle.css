@@ -12,7 +12,7 @@
 .login_additional_items,
 .registration_additional_items{
     position: absolute;    
-    top: 15%;
+    top: 12vh;
 }
 
 .login_box_wrapper,

@@ -5,8 +5,7 @@ export default {
     addFavorite(user, markerName, person) {       
         console.log(88, 'ADD_TO_FAVORITE')
         AppDispatcher.dispatch({
-            actionType: 'ADD_TO_FAVORITE',
-            favoriteMarkerName: markerName            
+            actionType: 'ADD_TO_FAVORITE',                   
         });
         
         for (let key in window.localStorage) {           

@@ -9,7 +9,7 @@ import MyMap from './components/Markers/Map';
 import MarkerInfo from './components/Markers/MarkerInfo';
 import FavoriteList from './components/Markers/FavoriteList';
 import LinksForMainPage from './components/Registration/LinksForMainPage';
-import LinksMainPage from './styles/LinksMainPage.css';
+import './styles/LinksMainPage.css';
 import markersInfo from './DataApp';
 
 
@@ -25,7 +25,8 @@ class App extends Component {
             markerName: null,
             markerInfo: null,
             auth: UserStore.auth,
-            user: UserStore.user
+            user: UserStore.user,
+            favoriteMarker: null
         };
     }
     
@@ -46,7 +47,8 @@ class App extends Component {
             markerName: MarkerStore.markerName,
             markerInfo: MarkerStore.markerInfo,
             auth: UserStore.auth,
-            user: UserStore.user            
+            user: UserStore.user,
+            favoriteMarker: MarkerStore.favoriteMarker
         })       
     }
     
@@ -57,7 +59,9 @@ class App extends Component {
       <div className="App">  
             
         <div id="map">            
-            <MyMap items={markersInfo} person={this.state.person}/>
+            <MyMap items={markersInfo} 
+                    person={this.state.person}
+                    markerName={this.state.markerName}/>
         </div>
 
         <div className="app_info_wrapper"> 
@@ -73,7 +77,8 @@ class App extends Component {
             </div>            
 
             <FavoriteList auth={this.state.auth}
-                          user={this.state.user}/>
+                          user={this.state.user}
+                          items={markersInfo} />
         </div>
         
         <div className="marker_info_wrapper">            

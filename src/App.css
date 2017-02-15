@@ -10,19 +10,15 @@
     z-index: 1;
 }
 
-
-
-
-.marker {
+.marker,
+.marker_selected {
     width: 10px;
     height: 10px;
-    overflow: 'hidden';
-    border: 1px solid orange;
     background: red;
     border-radius: 50%;
 }
 
-.marker:hover {
+.marker_selected {
     background: blue;
 }
 

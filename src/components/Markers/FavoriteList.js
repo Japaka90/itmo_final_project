@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-//import FavoriteListAction from '../../actions/PeopleListAction';
-//import PeopleListAction from '../../actions/PeopleListAction';
 import MarkersAction from '../../actions/MarkersAction';
 
 class FavoriteList extends Component {
@@ -19,12 +17,19 @@ class FavoriteList extends Component {
     }
     
     getInfoByMarkerName = (markerName) => {
-        
+        let data = this.props.items;
+        let info = '';
+        for (var i in data) {
+            if (data[i]['markerName'] === markerName){
+                info = data[i]['text'];                
+            }
+        }
+        return info
     }
     
     getMarkerInfo = (event) => {
         console.log('event', event.target.id)
-         MarkersAction.getMarkerInfo(0, 0, event.target.id, 'text');
+         MarkersAction.getMarkerInfo(0, 0, event.target.id, this.getInfoByMarkerName(event.target.id));
     }
     
     renderFavoriteItem = (item) => {         
@@ -44,12 +49,13 @@ class FavoriteList extends Component {
         ) }      
     }
     
+      
     checkAuth = () => {
         if (this.props.auth) {            
             return(
                 <div className="favorite_list">
                 <h3 className="favorite_list_header">Мои любимые места</h3>
-                 {this.renderFavoriteList(this.props.user)}
+                 {this.renderFavoriteList(this.props.user)}       
                 </div>
             )
         } else {
