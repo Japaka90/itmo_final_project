@@ -8,7 +8,7 @@ render() {
      return(
         <div className="app_header">
             <h1>React App</h1>
-             <LinksForMainPage auth={this.props.auth}/> 
+             <LinksForMainPage/> 
         </div>
         )
     }

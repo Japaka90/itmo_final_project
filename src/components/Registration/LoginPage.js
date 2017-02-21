@@ -29,8 +29,8 @@ class LoginPage extends Component {
     
     
     checkUser = () => {
-        let login = document.getElementById("username_input").value;
-        let password = document.getElementById("password_input").value; 
+        let login = this.login.value;
+        let password = this.password.value; 
         
         for (let key in window.localStorage) {                     
             if (key === login) {               
@@ -42,10 +42,6 @@ class LoginPage extends Component {
         }              
     }
     
-    checkAuth = () => {
-        
-    }
-
     
     render() {
         return(
@@ -53,9 +49,9 @@ class LoginPage extends Component {
                 <div className="login_box_wrapper">
                     <h2>Войти в личный кабинет</h2>
                     <form className="login">                      
-                        <input type="text" id="username_input" placeholder="Введите логин"/>
+                        <input type="text" id="username_input" ref={(input) => this.login = input} placeholder="Введите логин"/>
             
-                        <input type="password" id="password_input" placeholder="Введите пароль"/>
+                        <input type="password" id="password_input" ref={(input) => this.password = input} placeholder="Введите пароль"/>
             
                         <Link to={this.state.auth ? '/' : ''}>
                             <input type="button" id="submit_btn" value="Войти" onClick={this.checkUser}/>

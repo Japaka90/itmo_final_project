@@ -22,8 +22,7 @@ class App extends Component {
             markerName: null,
             markerInfo: null,
             auth: UserStore.auth,
-            user: UserStore.user,
-            favoriteMarker: null
+            user: UserStore.user,            
         };
     }
     
@@ -44,8 +43,7 @@ class App extends Component {
             markerName: MarkerStore.markerName,
             markerInfo: MarkerStore.markerInfo,
             auth: UserStore.auth,
-            user: UserStore.user,
-            favoriteMarker: MarkerStore.favoriteMarker
+            user: UserStore.user,            
         })       
     }
     
@@ -55,7 +53,7 @@ class App extends Component {
     return (
       <div className="App">  
         
-        <Header auth={this.state.auth}/>
+        <Header/>
         
         <div id="map">            
             <MyMap items={markersInfo} 

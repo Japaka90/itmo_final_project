@@ -71,8 +71,8 @@ class MyMap extends Component {
                 lon={this.getCoordinates(this.props.markerName).lng} 
                 onClick={this.selectFavoriteMarker}>
                     <MarkerLayout >
-                        <div className="marker_selected" >                       
-                        </div>
+                        <div className="marker_selected" />                       
+                        
                     </MarkerLayout>
                 </Marker>
             )
@@ -89,8 +89,7 @@ class MyMap extends Component {
                 <Marker key={'marker_' + i}  lat={lat} lon={lng} 
                 onClick={this.selectMarker}>
                     <MarkerLayout >
-                        <div className="marker">                        
-                        </div>
+                        <div className="marker" />                        
                     </MarkerLayout>
                 </Marker>                        
             ))}

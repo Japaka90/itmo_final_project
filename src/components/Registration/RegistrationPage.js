@@ -6,15 +6,15 @@ import LogInAction from '../../actions/LogInAction';
 class RegistrationPage extends Component { 
     
     registration = () => {
-        let login = document.getElementById("username_input").value;
-        let password = document.getElementById("password_input").value;
-        let password2 = document.getElementById("password_input2").value;
+        let login = this.login.value;
+        let password = this.password.value;
+        let password2 = this.password2.value;
         let repeat = false;
         
         if (password !== password2) {
             alert('Проверочный пароль не совпадает с основным. Пожалуйста введите пароль заново');
-            document.getElementById("password_input").value = '';
-            document.getElementById("password_input2").value = '';
+            this.password.value = '';
+            this.password2.value = '';
         } else {
             for (let key in window.localStorage) {
                 if (key === login) {
@@ -41,11 +41,11 @@ class RegistrationPage extends Component {
                 <div className="registration_box_wrapper">
                 <h2>Зарегистрироваться</h2>
                     <form>
-                         <input type="text" id="username_input" placeholder="Введите логин"/>
+                         <input type="text" id="username_input" ref={(input) => this.login = input} placeholder="Введите логин"/>
 
-                        <input type="password" id="password_input" placeholder="Введите пароль"/>
+                        <input type="password" id="password_input" ref={(input) => this.password = input} placeholder="Введите пароль"/>
 
-                        <input type="password" id="password_input2" placeholder="Повторите пароль"/>
+                        <input type="password" id="password_input2" ref={(input) => this.password2 = input} placeholder="Повторите пароль"/>
                         
                         <input type="button" id="submit_btn" value="Зарегистрироваться" onClick={this.registration}/>                      
                     </form>
