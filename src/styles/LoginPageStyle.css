@@ -48,6 +48,19 @@
     border-radius: 5px;
 }
 
+#username_input:focus,
+#password_input:focus,
+#password_input2:focus {
+    border: 4px solid blue;
+}
+
+#submit_btn:focus,
+#registration_btn:focus,
+#home_link_btn:focus,
+#login_btn:focus {
+    border: 2px solid blue;
+}
+
 #submit_btn,
 #registration_btn,
 #home_link_btn,

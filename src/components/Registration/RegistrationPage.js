@@ -60,7 +60,7 @@ class RegistrationPage extends Component {
                     </div>
                     <div className="home_link">
                         <Link to="/">
-                            <input type="button" id="home_link_btn" value="Вернуться назад" />
+                            <input type="button" id="home_link_btn" value="Вернуться на главную" />
                         </Link>
                     </div>
                 </div>           
