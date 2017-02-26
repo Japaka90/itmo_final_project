@@ -11,34 +11,16 @@
     background: white;
 }
 
-.category_wrapper{
-    margin-top: 2.5vw;   
-    margin-bottom: 1.1vw; 
-}
-
-
-.category_wrapper li {
-    display: inline-block;
-    width: 10vw;        
-    margin-right: 1vw; 
-    margin-bottom: 1vw; 
-    vertical-align: middle;
-    color: DarkSlateBlue;
-    font-size: 1.2vw;
-}
-
-.category_wrapper li:hover {
-    color: CornflowerBlue;
-}
-
-.category_wrapper ul {
-    text-align: center;
-    padding-left: 2vw;
-}
-
 .people_list_wrapper {
     height: 60%;
     font-size: 1.1vw;
+    overflow: auto;
+    max-height: 120px;
+}
+
+.places_list_wrapper {
+    height: 60%;
+    font-size: 0.9vw;
     overflow: auto;
     max-height: 120px;
 }
@@ -48,8 +30,14 @@
     color: MidnightBlue;
 }
 
+.places_list_wrapper li {
+    margin-top: 0.5vh;
+    color: MidnightBlue;
+}
+
 .people_list_wrapper li:hover,
-.favorite_list li:hover{
+.favorite_list li:hover,
+.places_list_wrapper li:hover {
     color: SteelBlue;
 }
 

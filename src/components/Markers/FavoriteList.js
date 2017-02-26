@@ -28,7 +28,6 @@ class FavoriteList extends Component {
     }
     
     getMarkerInfo = (event) => {
-        console.log('event', event.target.id)
          MarkersAction.getMarkerInfo(0, 0, event.target.id, this.getInfoByMarkerName(event.target.id));
     }
     
@@ -49,11 +48,18 @@ class FavoriteList extends Component {
         ) }      
     }
     
+    showMyPlaces = () => {
+        if (this.props.myList) {
+            return {display: "block"}
+        } else {
+            return {display: "none"}
+        }
+    }
       
     checkAuth = () => {
         if (this.props.auth) {            
             return(
-                <div className="favorite_list">
+                <div className="favorite_list"  style={this.showMyPlaces()}>
                 <h3 className="favorite_list_header">Мои любимые места</h3>
                  {this.renderFavoriteList(this.props.user)}       
                 </div>

@@ -1,40 +1,74 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import UserStore from '../../stores/UserStore';
+import CheckAuthStore from '../../stores/CheckAuthStore';
 import LogInAction from '../../actions/LogInAction';
+import UserExistAction from '../../actions/UserExistAction';
+import WrongPasswordAction from '../../actions/WrongPasswordAction';
+import ClearAlertAction from '../../actions/ClearAlertAction';
 
 
 class RegistrationPage extends Component { 
     
+    componentWillMount() {
+        this.state = {
+         auth: UserStore.auth,
+         wrongPassword: false,
+         userExist: false,
+        };
+    }
+
+    componentDidMount() {
+        UserStore.addChangeListener(this.onChange);
+        CheckAuthStore.addChangeListener(this.onChange);        
+    };
+
+     componentWillUnmount() {
+        UserStore.removeChangeListener(this.onChange);
+        CheckAuthStore.removeChangeListener(this.onChange);
+    };    
+    
+    onChange = () => {
+        this.setState({            
+            auth: UserStore.auth,  
+            wrongPassword: CheckAuthStore.wrongPassword,
+            userExist: CheckAuthStore.userExist,
+        })   
+    }
+    
     registration = () => {
+        ClearAlertAction.active();
         let login = this.login.value;
         let password = this.password.value;
         let password2 = this.password2.value;
-        let repeat = false;
         
-        if (password !== password2) {
-            alert('Проверочный пароль не совпадает с основным. Пожалуйста введите пароль заново');
-            this.password.value = '';
-            this.password2.value = '';
-        } else {
-            for (let key in window.localStorage) {
-                if (key === login) {
-                    repeat = true;
-                    alert('Пользователь с таким именем уже существует. Пожалуйста, выберите другое имя.');
+        if (login !== ''){
+            if (password !== password2) {
+                WrongPasswordAction.active();
+                this.password.value = '';
+                this.password2.value = '';
+                var flag = false
+            } else {
+                for (let key in window.localStorage) {
+                    if (key === login) {
+                        UserExistAction.active();
+                        flag = true
+                    }
                 }
-            }
-            
-            if(!repeat) {
-                let newUser = {login: login, 
-                               password: password,
-                               places: []}; 
-                window.localStorage.setItem(login, JSON.stringify(newUser));
-                console.log(window.localStorage);
-                LogInAction.logIn(login);
+
+                if(!flag) {
+                    let newUser = {login: login, 
+                                   password: password,
+                                   places: []}; 
+                    window.localStorage.setItem(login, JSON.stringify(newUser));
+                    console.log(window.localStorage);
+                    LogInAction.logIn(login);
+                }
             }
         }
     }
     
-    
+        
     render() {
         return(
             <div className="registration_page">
@@ -46,24 +80,26 @@ class RegistrationPage extends Component {
                         <input type="password" id="password_input" ref={(input) => this.password = input} placeholder="Введите пароль"/>
 
                         <input type="password" id="password_input2" ref={(input) => this.password2 = input} placeholder="Повторите пароль"/>
+                            
+                        <div className="registration_error_alert">
+                            <p style={this.state.userExist ? {visibility: "visible"} :{visibility: "hidden"}}>Такой пользователь уже существует</p>
+                            
+                            <p style={this.state.wrongPassword ? {visibility: "visible"} :{visibility: "hidden"}}>Проверочный пароль не совпадает с основным.</p>
+                       </div>
+                            
+                       <Link to={this.state.auth ? '/' : ''}>
+                            <input type="button" id="submit_btn" value="Зарегистрироваться" onClick={this.registration}/> 
+                       </Link>  
                         
-                        <input type="button" id="submit_btn" value="Зарегистрироваться" onClick={this.registration}/>                      
                     </form>
                 </div>
                 
-                <div className="registration_additional_items">
-                    <div className="have_account_wrapper">
-                        <p>У меня уже есть личный кабинет!</p>
-                        <Link to="/login" className="login_link">
-                            <input type="button" id="login_btn" value="Войти в личный кабинет"/>
-                        </Link>                    
-                    </div>
-                    <div className="home_link">
-                        <Link to="/">
-                            <input type="button" id="home_link_btn" value="Вернуться на главную" />
-                        </Link>
-                    </div>
-                </div>           
+                <div className="home_link">
+                    <Link to="/">
+                        <input type="button" id="home_link_btn" value="Вернуться на главную" />
+                    </Link>
+                </div>
+                         
                 
             </div>
         )

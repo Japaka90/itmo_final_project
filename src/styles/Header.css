@@ -9,3 +9,30 @@
     text-align: center;
     font-size: 3vh;
 }
+
+
+.category_wrapper{    
+    position: absolute;
+    right: 3%;
+    top: -2.7vh;
+}
+
+.category_wrapper li {
+    display: inline-block;
+    width: 12vw;   
+    height: 100%;
+    margin-left: 0.5vw; 
+    margin-bottom: 1vw; 
+    vertical-align: middle;
+    color: DarkSlateBlue;
+    font-size: 1vw;
+}
+
+.category_wrapper li:hover {
+    color: CornflowerBlue;
+}
+
+.category_wrapper ul {
+    text-align: center;
+    padding-left: 2vw;
+}

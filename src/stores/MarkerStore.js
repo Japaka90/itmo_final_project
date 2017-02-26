@@ -9,6 +9,7 @@ class MarkerStore extends EventEmitter {
         this.person = null;
         this.markerName = null;
         this.markerInfo = null;
+        this.showFavotitePlaces = false;
     }
     
     addChangeListener(callback) {
@@ -37,6 +38,10 @@ class MarkerStore extends EventEmitter {
         this.markerInfo = markerInfo;
     }    
     
+    setFavoritePlaces() {
+        this.showFavotitePlaces = !this.showFavotitePlaces;
+    }
+    
 }
 
 let store = new MarkerStore();
@@ -54,7 +59,11 @@ store.dispatchToken = AppDispatcher.register((action) => {
         case 'MARKER_CHOSEN':
             store.setMarker(action.markerName, action.text);
             store.emit('CHANGED'); 
-            break
+            break;
+         case 'SHOW_FAVORITE_PLACES':
+            store.setFavoritePlaces();
+            store.emit('CHANGED'); 
+            break;
         default:
             break;
     }

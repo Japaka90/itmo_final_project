@@ -2,7 +2,7 @@
     text-align: right;  
     position: absolute;
     top: 0;
-    right: 0;
+    left: 1%;
 }
 
 .links_wraper{
@@ -12,16 +12,17 @@
 
 .login_link,
 .register_link,
-.logout_link {    
+.logout_link,
+.favorite_places_link {    
     display: inline;
     margin: 0 0.5vw;
 }
 
-.logout_button {
-    position: absolute; 
-    right: 2vh;
-    background-color: PeachPuff;    
+.logout_button,
+.favorite_places_button {
+    background-color: PeachPuff;        
 }
+
 
 .main_page_links {
     background: #5466da;    
@@ -29,7 +30,8 @@
 }
 
 .main_page_links,
-.logout_button {
+.logout_button,
+.favorite_places_button {
     border-radius: 3px;
     height: 3.1vh;
     padding: 0 1vw;
