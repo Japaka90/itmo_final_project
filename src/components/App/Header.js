@@ -10,8 +10,7 @@ render() {
         <div className="app_header">
          <div className="category_wrapper">            
                 <Category items={this.props.items}/>          
-            </div>
-            <h1>React App</h1>
+            </div>            
              <LinksForMainPage/> 
         </div>
         )
