@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PeopleListAction from '../../actions/PeopleListAction';
+import CategoryAction from '../../actions/CategoryAction';
 import Przhevalsky from './Przhevalsky';
+import '../../styles/font-awesome-4.7.0/css/font-awesome.min.css';
 
 class PeopleList extends Component { 
 
@@ -26,7 +28,7 @@ class PeopleList extends Component {
     }
     
     selectPerson = (event) => {        
-        PeopleListAction.getMarkersByPerson(event.target.id)        
+        PeopleListAction.getMarkersByPerson(null)        
     } 
     
     
@@ -38,12 +40,26 @@ class PeopleList extends Component {
             </ul>
         )       
     }
+    
+    closingPeopleListButton = () => {
+        if(this.props.category) {
+            return (<i className="fa fa-times" aria-hidden="true"></i>)
+        }
+    }  
+                    
+         
+    closePeopleList = () => {
+         CategoryAction.getPeopleListByCategory(event.target.id)
+    }            
 
      
 render() {   
     
     return(
         <div>
+            <div id="closingTag" className="close_people_list" onClick={this.closePeopleList}>
+                {this.closingPeopleListButton()}              
+            </div>
             {this.props.category ? this.renderPeopleList(this.props.category) : null}
         </div>
         )

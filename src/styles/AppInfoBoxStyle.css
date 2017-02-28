@@ -9,6 +9,7 @@
     border: 1px solid grey;
     border-radius: 1%;
     background: white;
+    padding-top: 2.5vw;
 }
 
 .people_list_wrapper {
@@ -41,6 +42,11 @@
     color: SteelBlue;
 }
 
+.close_people_list {
+    position: absolute;
+    right: 0.2vw;
+    top: 0.2vw;
+}
 
 .favorite_list {
     padding-top: 1vh;
