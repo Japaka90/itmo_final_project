@@ -28,7 +28,7 @@ class PeopleList extends Component {
     }
     
     selectPerson = (event) => {        
-        PeopleListAction.getMarkersByPerson(null)        
+        PeopleListAction.getMarkersByPerson(event.target.id)        
     } 
     
     
@@ -49,7 +49,7 @@ class PeopleList extends Component {
                     
          
     closePeopleList = () => {
-         CategoryAction.getPeopleListByCategory(event.target.id)
+         CategoryAction.getPeopleListByCategory(null)
     }            
 
      

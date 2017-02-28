@@ -7,21 +7,19 @@
 
 .marker_info_wrapper {
     z-index: 2;
+    font-size: 1.1vw;
 }
 
 .marker_info_header {
     padding-left: 20px;
+    font-size: 1.1vw;
 }
 
 .marker_info_text {
     max-height: 180px;
     overflow: auto;
     padding: 0px 10px 0px 15px;
-    font-size: 15px;
-}
-
-.place_info {
-    
+    font-size: 1.1vw;
 }
 
 #affFavoriteTag {

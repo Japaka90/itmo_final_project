@@ -42,7 +42,7 @@ class RegistrationPage extends Component {
         let password = this.password.value;
         let password2 = this.password2.value;
         
-        if (login !== ''){
+        if (login !== '' && password !== ''){
             if (password !== password2) {
                 WrongPasswordAction.active();
                 this.password.value = '';
