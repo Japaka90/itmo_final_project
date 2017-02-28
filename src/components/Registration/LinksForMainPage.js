@@ -33,7 +33,7 @@ export default class LinksForMainPage extends Component {
     render() {
         return(
             <div className="links_main_page">
-            {this.state.auth ? <LinksIfAuth /> : <LinksIfNotAuth />}
+            {this.state.auth ? <LinksIfAuth user={this.state.user}/> : <LinksIfNotAuth />}
             </div>
         )
     }    

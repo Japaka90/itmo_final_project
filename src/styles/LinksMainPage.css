@@ -10,6 +10,13 @@
     margin-bottom: 1vw;
 }
 
+.user_name{
+    display: block;
+    float: left;
+    margin-right: 1.1vw;
+    margin-top: 0.1vw;
+}
+
 .login_link,
 .register_link,
 .logout_link,

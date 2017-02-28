@@ -55,11 +55,13 @@
     background: Moccasin;
     color: MidnightBlue;
     overflow: auto;
-    max-height: 200px;    
+    max-height: 200px;  
+    font-size: 1.1vw;
 }
 
 .favorite_list_header {
     text-align: center;
     color: black;
+    font-size: 1.2vw;
 }
 

@@ -16,6 +16,9 @@ class LinksIfAuth extends Component {
     render() {
         return(
             <div className="links_wraper">
+                <div className="user_name">
+                    {this.props.user}                    
+                </div>
                 <div className="logout_link">
                     <input className="logout_button" type="submit" onClick={this.out} value="Выйти" />                    
                 </div>
