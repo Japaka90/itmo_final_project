@@ -61,6 +61,15 @@ class App extends Component {
        
     
   render() {
+      if(typeof(testVar) === 'undefined') {
+          console.log( 'переменная не передалась из php')
+          var testVar = 0;
+      } else {
+          console.log('переменная передалась из php');
+      }
+      
+//      console.log(testVar);
+      
     return (
       <div className="App">  
         
